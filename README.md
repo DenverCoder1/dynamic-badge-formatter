@@ -1,5 +1,5 @@
 # Dynamic Badge Formatter
- 
+
 [![stars](https://custom-icon-badges.herokuapp.com/github/stars/DenverCoder1/dynamic-badge-formatter?logo=star)](https://github.com/DenverCoder1/dynamic-badge-formatter/stargazers "stars") [![issues](https://custom-icon-badges.herokuapp.com/github/issues-raw/DenverCoder1/dynamic-badge-formatter?logo=issue)](https://github.com/DenverCoder1/dynamic-badge-formatter/issues "issues") [![license](https://custom-icon-badges.herokuapp.com/github/license/denvercoder1/dynamic-badge-formatter?logo=law&logoColor=white)](https://github.com/DenverCoder1/dynamic-badge-formatter/blob/main/LICENSE?rgh-link-date=2021-08-09T18%3A10%3A26Z "license MIT") [![discord](https://custom-icon-badges.herokuapp.com/discord/819650821314052106?color=7289DA&logo=comments&label=discord&logoColor=white)](https://discord.gg/fPrdqh3Zfu "Dev Pro Tips Discussion & Support Server")
 
 Format [Shields Dynamic Badges](https://shields.io/#dynamic-badge) to look consistent using formatters for metrics, versions, stars and more.
@@ -37,27 +37,27 @@ Preview:
 The following values are supported for the `formatter` parameter:
 
 - `metric`: formats a number as a short metric (eg. `3.4k`, `12.3M`)
-![before](https://img.shields.io/badge/before-3400-cc6060) ![metric](https://img.shields.io/badge/metric-3.4k-2ea44f)
+  ![before](https://img.shields.io/badge/before-3400-cc6060) ![metric](https://img.shields.io/badge/metric-3.4k-2ea44f)
 
 - `starRating`: formats a number as stars (eg. `★★★★½`)
-![before](https://img.shields.io/badge/before-4.5-cc6060) ![starRating](https://img.shields.io/badge/starRating-★★★★½-2ea44f)
+  ![before](https://img.shields.io/badge/before-4.5-cc6060) ![starRating](https://img.shields.io/badge/starRating-★★★★½-2ea44f)
 
 - `ordinalNumber`: formats a number with an ordinal suffix (eg. `9ᵗʰ`)
-![before](https://img.shields.io/badge/before-9-cc6060) ![ordinalNumber](https://img.shields.io/badge/ordinalNumber-9ᵗʰ-2ea44f)
+  ![before](https://img.shields.io/badge/before-9-cc6060) ![ordinalNumber](https://img.shields.io/badge/ordinalNumber-9ᵗʰ-2ea44f)
 
 - `omitv`: Remove a `v` as a prefix from a version number (eg. `v1.2.3` becomes `1.2.3`)
-![before](https://img.shields.io/badge/before-v1.2.3-cc6060) ![omitv](https://img.shields.io/badge/omitv-1.2.3-2ea44f)
+  ![before](https://img.shields.io/badge/before-v1.2.3-cc6060) ![omitv](https://img.shields.io/badge/omitv-1.2.3-2ea44f)
 
 - `addv`: Add a `v` as a prefix from a version number (eg. `1.2.3` becomes `v1.2.3`)
-![before](https://img.shields.io/badge/before-1.2.3-cc6060) ![addv](https://img.shields.io/badge/addv-v1.2.3-2ea44f)
+  ![before](https://img.shields.io/badge/before-1.2.3-cc6060) ![addv](https://img.shields.io/badge/addv-v1.2.3-2ea44f)
 
 - `formatDate`
-![before](https://img.shields.io/badge/before-2019--01--01-cc6060) ![formatDate](https://img.shields.io/badge/formatDate-january%202019-2ea44f)
+  ![before](https://img.shields.io/badge/before-2019--01--01-cc6060) ![formatDate](https://img.shields.io/badge/formatDate-january%202019-2ea44f)
 
 - `formatRelativeDate`
-![before](https://img.shields.io/badge/before-1655162563-cc6060) ![formatRelativeDate](https://img.shields.io/badge/formatRelativeDate-3%20days%20ago-2ea44f)
+  ![before](https://img.shields.io/badge/before-1655162563-cc6060) ![formatRelativeDate](https://img.shields.io/badge/formatRelativeDate-3%20days%20ago-2ea44f)
 
-##  ⚙️ Other Parameters
+## ⚙️ Other Parameters
 
 | Parameter      | Type      | Description                                                                                        |
 | -------------- | --------- | -------------------------------------------------------------------------------------------------- |
@@ -90,11 +90,11 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 <details>
   <summary>Deploy to Runkit</summary>
 
-  1. Sign in to **Runkit** or create a new account at <https://runkit.com>
-  2. Create a new notebook
-  3. Paste the contents of [`index.js`](./index.js) into the notebook
-  4. Click `endpoint` to get your endpoint to run requests against
-	
+1. Sign in to **Runkit** or create a new account at <https://runkit.com>
+2. Create a new notebook
+3. Paste the contents of [`index.js`](./index.js) into the notebook
+4. Click `endpoint` to get your endpoint to run requests against
+
 </details>
 
 ## 💬 Questions?
@@ -103,7 +103,7 @@ Feel free to [open an issue](http://github.com/DenverCoder1/dynamic-badge-format
 
 ## ❤️ Thanks
 
-  - [Shields.io](https://github.com/badges/shields) for all the great work they have done with creating tools for creating Dynamic and Endpoint Badges
+- [Shields.io](https://github.com/badges/shields) for all the great work they have done with creating tools for creating Dynamic and Endpoint Badges
 
 ## 📚 License
 
