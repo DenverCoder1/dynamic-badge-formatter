@@ -18,17 +18,31 @@ Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using 
 
 5. URL Encode the new endpoint URL and append it after `https://img.shields.io/endpoint?url=`. You can also do this by [pasting the URL](https://user-images.githubusercontent.com/20955511/173730516-1470689e-0e05-4761-89f4-4aa7d8fcb023.png) at [shields.io/endpoint](https://shields.io/endpoint).
 
-Example:
+### Example
+
+The following is a JSON API I want to use for displaying data. I want to display the stars but formatted as a metric (eg. `"3.2k"` instead of `"3227"`). To extract the star count from the JSON, I will use the query `$.stars`.
+
+```jsonc
+// https://api.github-star-counter.workers.dev/user/DenverCoder1
+{
+  "stars": 3227,
+  "forks": 1207
+}
+```
+
+To create the Runkit URL, pass the `query`, `url`, and additional parameters to the endpoint. In this example, I set `formatter` to `metric`, `label` to `stars`, `color` to `green`, and `logo` to `github`.
 
 ```md
-Endpoint to pass to img.shields.io:
 https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh/json?query=$.stars&url=https://api.github-star-counter.workers.dev/user/DenverCoder1&formatter=metric&label=stars&color=green&logo=github
+```
 
-Badge URL:
+Using the customizer at <https://shields.io/endpoint>, I can turn this endpoint into a badge.
+
+```md
 https://img.shields.io/endpoint?url=https%3A%2F%2Fdynamic-badge-formatter-ynrxn78r2oye.runkit.sh%2Fjson%3Fquery%3D%24.stars%26url%3Dhttps%3A%2F%2Fapi.github-star-counter.workers.dev%2Fuser%2FDenverCoder1%26formatter%3Dmetric%26label%3Dstars%26color%3Dgreen%26logo%3Dgithub
 ```
 
-Preview:
+Result:
 
 ![preview](https://img.shields.io/endpoint?url=https%3A%2F%2Fdynamic-badge-formatter-ynrxn78r2oye.runkit.sh%2Fjson%3Fquery%3D%24.stars%26url%3Dhttps%3A%2F%2Fapi.github-star-counter.workers.dev%2Fuser%2FDenverCoder1%26formatter%3Dmetric%26label%3Dstars%26color%3Dgreen%26logo%3Dgithub)
 
