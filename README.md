@@ -4,7 +4,7 @@
 
 Format [Shields Dynamic Badges](https://shields.io/#dynamic-badge) to look consistent using formatters for metrics, versions, stars and more.
 
-Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using [Endpoint Badges](https://shields.io/endpoint)
+Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using [Endpoint Badges](https://shields.io/endpoint) with a [Runkit Endpoint](https://runkit.com/denvercoder1/dynamic-badge-formatter).
 
 ## ⚡ How to use
 
