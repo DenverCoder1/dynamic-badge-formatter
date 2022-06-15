@@ -31,8 +31,12 @@ form {
   margin: 0.25em;
   border-radius: 0.25em;
   background: #2c2c2c;
-  color: wheat;
+  color: white;
   border: 1px solid #555555;
+}
+
+.url-input {
+  min-width: 300px;
 }
 
 div.markdown pre {
