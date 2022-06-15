@@ -1,0 +1,238 @@
+body {
+  background: #151515;
+  color: #fff;
+  font-family: Segoe UI, Ubuntu, sans-serif;
+}
+
+a {
+  color: #b7f9ff;
+}
+
+a:visited {
+  color: #f2a4ff;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  margin-left: 3em;
+}
+
+.loader {
+  margin-left: 1.5em;
+}
+
+.input-group select,
+.input-group input {
+  padding: 0.4em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  background: #2c2c2c;
+  color: wheat;
+  border: 1px solid #555555;
+}
+
+div.markdown pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  background: #555;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+span.tooltip {
+  margin: 0 0.25em;
+}
+
+/* tooltips */
+
+/* bubble */
+.tooltip:before {
+  content: attr(title);
+  height: auto;
+  width: auto;
+  position: absolute;
+  background: #4a4a4afa;
+  border-radius: 4px;
+  color: white;
+  line-height: 30px;
+  font-size: 0.9em;
+  padding: 0 12px;
+  transform: translate(-55px, -35px);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* triangle */
+.tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #4a4a4afa transparent transparent transparent;
+  transform: translate(-10px, -5px);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tooltip:hover:before,
+.tooltip:hover:after {
+  opacity: 1;
+}
+
+/*
+   * three-dots - v0.2.3
+   * CSS loading animations made with single element
+   * https://nzbin.github.io/three-dots/
+   *
+   * Copyright (c) 2018 nzbin
+   * Released under MIT License
+   */
+.dot-elastic {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic 1s infinite linear;
+  animation: dot-elastic 1s infinite linear;
+}
+.dot-elastic::before,
+.dot-elastic::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-elastic::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic-before 1s infinite linear;
+  animation: dot-elastic-before 1s infinite linear;
+}
+.dot-elastic::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic-after 1s infinite linear;
+  animation: dot-elastic-after 1s infinite linear;
+}
+
+@-webkit-keyframes dot-elastic-before {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dot-elastic-before {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes dot-elastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes dot-elastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes dot-elastic-after {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes dot-elastic-after {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
