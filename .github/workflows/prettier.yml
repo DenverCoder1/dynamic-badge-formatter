@@ -1,0 +1,21 @@
+name: Format with Prettier
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.2
+        with:
+          prettier_options: "--write **/*.{md,js} !**/*.min.js --print-width 120"
+          commit_message: "style: Formatted code with Prettier"
