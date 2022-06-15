@@ -8,13 +8,19 @@ Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using 
 
 ## ⚡ How to use
 
-1. Choose a JSON, XML, or YAML endpoint URL to extract data from.
+The easiest way to get started is to [try out the demo site!](https://denvercoder1.github.io/dynamic-badge-formatter/)
 
-2. Create a query using a [JSONPath](https://jsonpath.com/) or [XPath](http://xpather.com/) expression.
+![image](https://user-images.githubusercontent.com/20955511/173765971-5295e75b-effc-4e91-919a-5a874336182a.png)
+
+### Advanced steps
+
+1. Choose a JSON, XML, or YAML data URL to extract data from.
+
+2. Create a query using a [JSONPath](https://jsonpath.com/) (for JSON or YAML) or [XPath](http://xpather.com/) (for XML) expression.
 
 3. Set the `url` and `query` parameters at the endpoint <https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh/json>, using `/json` for JSON, `/xml` for XML, and `/yaml` for YAML.
 
-4. Set additional customizations such as the `color`, `label`, `labelColor`, `logo`, etc., and specify a `formatter` to use (see below).
+4. Set additional customizations as query parameters, such as the `color`, `label`, `labelColor`, `logo`, etc., and specify a `formatter` to use (see below).
 
 5. URL Encode the new endpoint URL and append it after `https://img.shields.io/endpoint?url=`. You can also do this by [pasting the URL](https://user-images.githubusercontent.com/20955511/173730516-1470689e-0e05-4761-89f4-4aa7d8fcb023.png) at [shields.io/endpoint](https://shields.io/endpoint).
 
