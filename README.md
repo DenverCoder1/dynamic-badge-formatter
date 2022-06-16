@@ -56,15 +56,15 @@ Result:
 
 The following values are supported for the `formatter` parameter:
 
-| Formatter            | Description                                                                            | Example                                                                                                                                   |
-| -------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `metric`             | Formats a number as a short metric (eg. `3.4k`, `12.3M`)                               | ![before](https://img.shields.io/badge/before-3400-cc6060)<br/>![after](https://img.shields.io/badge/after-3.4k-2ea44f)                   |
-| `starRating`         | Formats a number as stars (eg. `★★★★½`)                                                | ![before](https://img.shields.io/badge/before-4.5-cc6060)<br/>![after](https://img.shields.io/badge/after-★★★★½-2ea44f)                   |
-| `ordinalNumber`      | Formats a number with an ordinal suffix (eg. `9ᵗʰ`)                                    | ![before](https://img.shields.io/badge/before-9-cc6060)<br/>![after](https://img.shields.io/badge/after-9ᵗʰ-2ea44f)                       |
-| `omitv`              | Removes a `v` as a prefix from a version number (eg. `v1.2.3` becomes `1.2.3`)         | ![before](https://img.shields.io/badge/before-v1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-1.2.3-2ea44f)                |
-| `addv`               | Adds a `v` as a prefix from a version number (eg. `1.2.3` becomes `v1.2.3`)            | ![before](https://img.shields.io/badge/before-1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-v1.2.3-2ea44f)                |
-| `formatDate`         | Formats dates as a month and year, "today" or "yesterday" can appear for recent dates  | ![before](https://img.shields.io/badge/before-2019--01--01-cc6060)<br/>![after](https://img.shields.io/badge/after-january%202019-2ea44f) |
-| `formatRelativeDate` | Formats a UNIX Timestamp in seconds as a relative time (eg. `3 days ago`)              | ![before](https://img.shields.io/badge/before-1655162563-cc6060)<br/>![after](https://img.shields.io/badge/after-3%20days%20ago-2ea44f)   |
+| Formatter            | Description                                                                           | Example                                                                                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `metric`             | Formats a number as a short metric (eg. `3.4k`, `12.3M`)                              | ![before](https://img.shields.io/badge/before-3400-cc6060)<br/>![after](https://img.shields.io/badge/after-3.4k-2ea44f)                   |
+| `starRating`         | Formats a number as stars (eg. `★★★★½`)                                               | ![before](https://img.shields.io/badge/before-4.5-cc6060)<br/>![after](https://img.shields.io/badge/after-★★★★½-2ea44f)                   |
+| `ordinalNumber`      | Formats a number with an ordinal suffix (eg. `9ᵗʰ`)                                   | ![before](https://img.shields.io/badge/before-9-cc6060)<br/>![after](https://img.shields.io/badge/after-9ᵗʰ-2ea44f)                       |
+| `omitv`              | Removes a `v` as a prefix from a version number (eg. `v1.2.3` becomes `1.2.3`)        | ![before](https://img.shields.io/badge/before-v1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-1.2.3-2ea44f)                |
+| `addv`               | Adds a `v` as a prefix from a version number (eg. `1.2.3` becomes `v1.2.3`)           | ![before](https://img.shields.io/badge/before-1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-v1.2.3-2ea44f)                |
+| `formatDate`         | Formats dates as a month and year, "today" or "yesterday" can appear for recent dates | ![before](https://img.shields.io/badge/before-2019--01--01-cc6060)<br/>![after](https://img.shields.io/badge/after-january%202019-2ea44f) |
+| `formatRelativeDate` | Formats a UNIX Timestamp in seconds as a relative time (eg. `3 days ago`)             | ![before](https://img.shields.io/badge/before-1655162563-cc6060)<br/>![after](https://img.shields.io/badge/after-3%20days%20ago-2ea44f)   |
 
 ## ⚙️ Other Parameters
 
