@@ -7,7 +7,7 @@
   const copyButton = document.querySelector(".output .copy-button");
 
   function getBadgeURL(dataType, params) {
-    const baseRunkit = "https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh/";
+    const baseRunkit = "https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh";
     const baseShieldsEndpoint = "https://img.shields.io/endpoint";
     const runkitURL = `${baseRunkit}/${dataType}?${Object.keys(params)
       .map((key) => `${key}=${encodeURIComponent(params[key])}`)
