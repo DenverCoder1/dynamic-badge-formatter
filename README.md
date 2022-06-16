@@ -8,9 +8,9 @@ Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using 
 
 ## ⚡ How to use
 
-The easiest way to get started is to [try out the demo site!](https://denvercoder1.github.io/dynamic-badge-formatter/)
+The easiest way to get started is to [try out the demo site](https://denvercoder1.github.io/dynamic-badge-formatter/)!
 
-![image](https://user-images.githubusercontent.com/20955511/173765971-5295e75b-effc-4e91-919a-5a874336182a.png)
+[![demo site](https://user-images.githubusercontent.com/20955511/173765971-5295e75b-effc-4e91-919a-5a874336182a.png)](https://denvercoder1.github.io/dynamic-badge-formatter/)
 
 ### Advanced steps
 
@@ -38,13 +38,13 @@ The following is a JSON API I want to use for displaying data. I want to display
 
 To create the Runkit URL, pass the `query`, `url`, and additional parameters to the endpoint. In this example, I set `formatter` to `metric`, `label` to `stars`, `color` to `green`, and `logo` to `github`.
 
-```md
+```
 https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh/json?query=$.stars&url=https://api.github-star-counter.workers.dev/user/DenverCoder1&formatter=metric&label=stars&color=green&logo=github
 ```
 
 Using the customizer at <https://shields.io/endpoint>, I can turn this endpoint into a badge.
 
-```md
+```
 https://img.shields.io/endpoint?url=https%3A%2F%2Fdynamic-badge-formatter-ynrxn78r2oye.runkit.sh%2Fjson%3Fquery%3D%24.stars%26url%3Dhttps%3A%2F%2Fapi.github-star-counter.workers.dev%2Fuser%2FDenverCoder1%26formatter%3Dmetric%26label%3Dstars%26color%3Dgreen%26logo%3Dgithub
 ```
 
@@ -56,29 +56,29 @@ Result:
 
 The following values are supported for the `formatter` parameter:
 
-| Formatter            | Description                                                                           | Example                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `metric`             | Formats a number as a short metric (eg. `3.4k`, `12.3M`)                              | ![before](https://img.shields.io/badge/before-3400-cc6060)<br/>![after](https://img.shields.io/badge/after-3.4k-2ea44f)                   |
-| `starRating`         | Formats a number as stars (eg. `★★★★½`)                                               | ![before](https://img.shields.io/badge/before-4.5-cc6060)<br/>![after](https://img.shields.io/badge/after-★★★★½-2ea44f)                   |
-| `ordinalNumber`      | Formats a number with an ordinal suffix (eg. `9ᵗʰ`)                                   | ![before](https://img.shields.io/badge/before-9-cc6060)<br/>![after](https://img.shields.io/badge/after-9ᵗʰ-2ea44f)                       |
-| `omitv`              | Removes a `v` as a prefix from a version number (eg. `v1.2.3` becomes `1.2.3`)        | ![before](https://img.shields.io/badge/before-v1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-1.2.3-2ea44f)                |
-| `addv`               | Adds a `v` as a prefix from a version number (eg. `1.2.3` becomes `v1.2.3`)           | ![before](https://img.shields.io/badge/before-1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-v1.2.3-2ea44f)                |
-| `formatDate`         | Formats dates as a month and year. "today" or "yesterday" can appear for recent dates | ![before](https://img.shields.io/badge/before-2019--01--01-cc6060)<br/>![after](https://img.shields.io/badge/after-january%202019-2ea44f) |
-| `formatRelativeDate` | Format a UNIX Timestamp in seconds as a relative time (eg. `3 days ago`)              | ![before](https://img.shields.io/badge/before-1655162563-cc6060)<br/>![after](https://img.shields.io/badge/after-3%20days%20ago-2ea44f)   |
+| Formatter            | Description                                                                            | Example                                                                                                                                   |
+| -------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `metric`             | Formats a number as a short metric (eg. `3.4k`, `12.3M`)                               | ![before](https://img.shields.io/badge/before-3400-cc6060)<br/>![after](https://img.shields.io/badge/after-3.4k-2ea44f)                   |
+| `starRating`         | Formats a number as stars (eg. `★★★★½`)                                                | ![before](https://img.shields.io/badge/before-4.5-cc6060)<br/>![after](https://img.shields.io/badge/after-★★★★½-2ea44f)                   |
+| `ordinalNumber`      | Formats a number with an ordinal suffix (eg. `9ᵗʰ`)                                    | ![before](https://img.shields.io/badge/before-9-cc6060)<br/>![after](https://img.shields.io/badge/after-9ᵗʰ-2ea44f)                       |
+| `omitv`              | Removes a `v` as a prefix from a version number (eg. `v1.2.3` becomes `1.2.3`)         | ![before](https://img.shields.io/badge/before-v1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-1.2.3-2ea44f)                |
+| `addv`               | Adds a `v` as a prefix from a version number (eg. `1.2.3` becomes `v1.2.3`)            | ![before](https://img.shields.io/badge/before-1.2.3-cc6060)<br/>![after](https://img.shields.io/badge/after-v1.2.3-2ea44f)                |
+| `formatDate`         | Formats dates as a month and year, "today" or "yesterday" can appear for recent dates  | ![before](https://img.shields.io/badge/before-2019--01--01-cc6060)<br/>![after](https://img.shields.io/badge/after-january%202019-2ea44f) |
+| `formatRelativeDate` | Formats a UNIX Timestamp in seconds as a relative time (eg. `3 days ago`)              | ![before](https://img.shields.io/badge/before-1655162563-cc6060)<br/>![after](https://img.shields.io/badge/after-3%20days%20ago-2ea44f)   |
 
 ## ⚙️ Other Parameters
 
 | Parameter      | Type      | Description                                                                                        |
 | -------------- | --------- | -------------------------------------------------------------------------------------------------- |
-| `url`          | `string`  | `required` The JSON, XML, or YML URL to fetch a value from                                         |
-| `query`        | `string`  | `required` The JSON query for extracting a field for the value                                     |
+| `url`          | `string`  | `required` The JSON, XML, or YAML data URL to fetch a message value from                           |
+| `query`        | `string`  | `required` The JSONPath or XPath query for extracting a field for the value                        |
 | `label`        | `string`  | `optional` The label to use for the badge, default: "custom badge"                                 |
 | `color`        | `string`  | `optional` The color to use for the badge, default: "blue"                                         |
 | `labelColor`   | `string`  | `optional` The color to use for the label, default: "grey"                                         |
 | `isError`      | `boolean` | `optional` If true, the badge color is overriden to be red, default: false                         |
-| `namedLogo`    | `string`  | `optional` The name of a logo to use from Simple Icons, default: none                              |
-| `logoSvg`      | `string`  | `optional` The base64 encoded SVG content of a logo to use, default: none                          |
-| `logo`         | `string`  | `optional` A named logo or base64 encoded SVG, overidden by namedLogo or logoSvg, default: none    |
+| `logo`         | `string`  | `optional` A named logo to use from Simple Icons or base64 encoded SVG, default: none              |
+| `namedLogo`    | `string`  | `optional` The name of a logo to use from Simple Icons, overrides `logo`, default: none            |
+| `logoSvg`      | `string`  | `optional` The base64 encoded SVG content of a logo to use, overrides `logo`, default: none        |
 | `logoColor`    | `string`  | `optional` The color to use for the logo, default: none                                            |
 | `logoWidth`    | `number`  | `optional` The width of the logo, default: none                                                    |
 | `logoPosition` | `number`  | `optional` The position offset of the logo, default: none                                          |
