@@ -10,7 +10,7 @@ Dynamic Badge Formatter works alongside [shields.io](https://shields.io/) using 
 
 The easiest way to get started is to [try out the demo site](https://denvercoder1.github.io/dynamic-badge-formatter/)!
 
-[![demo site](https://user-images.githubusercontent.com/20955511/174154577-2e4c6295-e52a-4ddf-bc14-b7091b06748f.png)](https://denvercoder1.github.io/dynamic-badge-formatter/)
+[![demo site](https://user-images.githubusercontent.com/20955511/174156046-a84dd1c7-d08a-4d5f-bc73-c79cca980180.png)](https://denvercoder1.github.io/dynamic-badge-formatter/)
 
 ### Advanced steps
 
