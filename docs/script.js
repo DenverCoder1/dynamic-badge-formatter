@@ -4,6 +4,7 @@
   const previewImage = document.querySelector("#preview img");
   const previewLink = document.querySelector("#preview a");
   const markdownBlock = document.querySelector("#preview .markdown pre");
+  const copyButton = document.querySelector(".output .copy-button");
 
   function getBadgeURL(dataType, params) {
     const baseRunkit = "https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh/";
@@ -46,8 +47,8 @@
       markdown = `[${markdown}](${href})`;
     }
     markdownBlock.innerText = markdown;
-
     previewImage.src = shieldsEndpoint;
+    copyButton.disabled = false;
   }
 
   inputs.forEach((el) => {
@@ -56,5 +57,30 @@
 
   previewImage.addEventListener("load", () => {
     toggleLoader(false);
+  });
+
+  copyButton.addEventListener("click", () => {
+    // copy using the clipboard API
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(markdownBlock.innerText).then(() => {
+        copyButton.innerText = "Copied!";
+        setTimeout(() => {
+          copyButton.innerText = "Copy to Clipboard";
+        }, 1000);
+      });
+    }
+    // fallback to copying the text using execCommand
+    else {
+      const textarea = document.createElement("textarea");
+      textarea.value = markdownBlock.innerText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      copyButton.innerText = "Copied!";
+      setTimeout(() => {
+        copyButton.innerText = "Copy to clipboard";
+      }, 1000);
+    }
   });
 })();
