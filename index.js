@@ -129,11 +129,11 @@ const contentSchema = [
   "color", // string, default: "blue"
   "labelColor", // string, default: "grey"
   "isError", // boolean, default: false
-  "namedLogo", // string,
-  "logoSvg", // string,
-  "logoColor", // string,
-  "logoWidth", // number,
-  "logoPosition", // number,
+  "namedLogo", // string
+  "logoSvg", // string
+  "logoColor", // string
+  "logoWidth", // number
+  "logoPosition", // number
   "style", // string, default: "flat"
   "cacheSeconds", // number, default: 300
 ];
@@ -145,15 +145,15 @@ const contentSchema = [
  * - dataType: string, optional, one of "json", "xml", or "yaml", default: "json"
  *
  * Query parameters:
- * - url: string, required, the JSON, XML, or YML URL to fetch a value from
- * - query: string, required, the JSON query for extracting a field for the value
+ * - url: string, required, the JSON, XML, or YAML data URL to fetch a message value from
+ * - query: string, required, the JSONPath or XPath query for extracting a field for the value
  * - label: string, optional, the label to use for the badge, default: "custom badge"
  * - color: string, optional, the color to use for the badge, default: "blue"
  * - labelColor: string, optional, the color to use for the label, default: "grey"
  * - isError: boolean, optional, if true, the badge color is overriden to be red, default: false
- * - namedLogo: string, optional, the name of a logo to use from Simple Icons, default: none
- * - logoSvg: string, optional, the base64 encoded SVG content of a logo to use, default: none
- * - logo: string, optional, a named logo or a base64 encoded SVG content of a logo to use, overidden by namedLogo or logoSvg, default: none
+ * - logo: string, optional, a named logo or a base64 encoded SVG content of a logo to use default: none
+ * - namedLogo: string, optional, the name of a logo to use from Simple Icons, overrides logo, default: none
+ * - logoSvg: string, optional, the base64 encoded SVG content of a logo to use, overrides logo, default: none
  * - logoColor: string, optional, the color to use for the logo, default: none
  * - logoWidth: number, optional, the width of the logo, default: none
  * - logoPosition: number, optional, the position offset of the logo, default: none
