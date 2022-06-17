@@ -4,7 +4,8 @@
   const previewImage = document.querySelector("#preview img");
   const previewLink = document.querySelector("#preview a");
   const markdownBlock = document.querySelector("#preview .markdown pre");
-  const copyButton = document.querySelector(".output .copy-button");
+  const imageSourceBlock = document.querySelector("#preview .image-source pre");
+  const copyButtons = Array.from(document.querySelectorAll(".output .copy-button"));
 
   function getBadgeURL(dataType, params) {
     const baseRunkit = "https://dynamic-badge-formatter-ynrxn78r2oye.runkit.sh";
@@ -41,14 +42,17 @@
     toggleLoader(true);
 
     previewLink.removeAttribute("href");
+    previewImage.src = shieldsEndpoint;
+    imageSourceBlock.innerText = shieldsEndpoint;
     let markdown = `![badge](${shieldsEndpoint})`;
     if (href) {
       previewLink.href = href;
       markdown = `[${markdown}](${href})`;
     }
     markdownBlock.innerText = markdown;
-    previewImage.src = shieldsEndpoint;
-    copyButton.disabled = false;
+    copyButtons.forEach((el) => {
+      el.disabled = false;
+    });
   }
 
   inputs.forEach((el) => {
@@ -59,28 +63,31 @@
     toggleLoader(false);
   });
 
-  copyButton.addEventListener("click", () => {
-    // copy using the clipboard API
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(markdownBlock.innerText).then(() => {
-        copyButton.innerText = "Copied!";
+  copyButtons.forEach((el) => {
+    el.addEventListener("click", (event) => {
+      const text = event.target.closest(".text-output").querySelector("pre").innerText;
+      // copy using the clipboard API
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          event.target.innerText = "Copied!";
+          setTimeout(() => {
+            event.target.innerText = "Copy to Clipboard";
+          }, 1000);
+        });
+      }
+      // fallback to copying the text using execCommand
+      else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        event.target.innerText = "Copied!";
         setTimeout(() => {
-          copyButton.innerText = "Copy to Clipboard";
+          event.target.innerText = "Copy to clipboard";
         }, 1000);
-      });
-    }
-    // fallback to copying the text using execCommand
-    else {
-      const textarea = document.createElement("textarea");
-      textarea.value = markdownBlock.innerText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-      copyButton.innerText = "Copied!";
-      setTimeout(() => {
-        copyButton.innerText = "Copy to clipboard";
-      }, 1000);
-    }
+      }
+    });
   });
 })();

@@ -75,11 +75,21 @@ footer {
   border: 1px solid var(--stroke);
 }
 
-.url-input {
-  min-width: 380px;
+@media (max-width: 680px) {
+  .input-group select,
+  .input-group input {
+    display: block;
+    width: 100%;
+    margin: 0.75em 0;
+  }
 }
 
-div.markdown pre {
+.url-input {
+  width: 380px;
+  max-width: 100%;
+}
+
+div.text-output pre {
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
