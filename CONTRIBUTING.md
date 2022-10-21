@@ -10,5 +10,5 @@ Make sure your request is meaningful and it would help if you test the project b
 
 1. Sign in to **Runkit** or create a new account at <https://runkit.com>
 2. Create a new notebook
-3. Paste the contents of [`index.js`](./index.js) into the notebook
+3. Paste the contents of [`index.js`](./runkit/index.js) into the notebook
 4. Click `endpoint` to get your own endpoint to run requests against
