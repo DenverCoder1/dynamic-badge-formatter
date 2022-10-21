@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Dynamic Badge Formatter</title>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <svg style="display: none">
+        <defs>
+            <symbol id="question" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+                <path
+                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 0 0-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <a href="https://github.com/denvercoder1/dynamic-badge-formatter" class="header-link center" target="_blank">
+        <h1>Dynamic Badge Formatter</h1>
+    </a>
+
+    <!-- GitHub badges/links section -->
+    <div class="github center">
+        <!-- GitHub Sponsors -->
+        <a class="github-button" href="https://github.com/sponsors/denvercoder1"
+            data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-heart"
+            data-size="large" aria-label="Sponsor @denvercoder1 on GitHub">Sponsor</a>
+        <!-- View on GitHub -->
+        <a class="github-button" href="https://github.com/denvercoder1/dynamic-badge-formatter"
+            data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large"
+            aria-label="View denvercoder1/dynamic-badge-formatter on GitHub">View on GitHub</a>
+        <!-- GitHub Star -->
+        <a class="github-button" href="https://github.com/denvercoder1/dynamic-badge-formatter"
+            data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star"
+            data-size="large" data-show-count="true"
+            aria-label="Star denvercoder1/dynamic-badge-formatter on GitHub">Star</a>
+    </div>
+
+    <div class="container">
+        <div class="properties">
+            <h2>Properties</h2>
+
+            <form action="index.php" action="return false;" onsubmit="return false;">
+                <div class="input-group">
+                    <label for="dataType">Data type:</label>
+                    <span class="tooltip" title="The response type of the remote URL to fetch the badge message from">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <select name="dataType" id="dataType">
+                        <option value="json">JSON</option>
+                        <option value="xml">XML</option>
+                        <option value="yaml">YAML</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="url">Data URL:</label>
+                    <span class="tooltip" title="An API URL or remote location for fetching the badge message">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input class="url-input" type="text" name="url" id="url"
+                        placeholder="https://example.com/data.json">
+                </div>
+
+                <div class="input-group">
+                    <label for="query">Query (JSON/YAML: <a href="https://jsonpath.com">JSONPath</a>, XML:
+                        <a href="https://xpather.com">XPath</a>):</label>
+                    <span class="tooltip" title="A JSONPath or XPath query of the field to extract from the data">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="query" id="query" placeholder="$.data.items[*].name">
+                </div>
+
+                <div class="input-group">
+                    <label for="formatter">Formatter:</label>
+                    <span class="tooltip" title="A function to format the badge message.">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <select name="formatter" id="formatter">
+                        <option value="metric">metric (e.g. 1.2k)</option>
+                        <option value="starRating">starRating (e.g. ★★★☆☆)</option>
+                        <option value="ordinalNumber">ordinalNumber (e.g. 9ᵗʰ)</option>
+                        <option value="omitv">omitv (e.g. 1.2.0)</option>
+                        <option value="addv">addv (e.g. v1.2.0)</option>
+                        <option value="formatDate">formatDate (e.g. january 2019)</option>
+                        <option value="formatRelativeDate">formatRelativeDate (e.g. 1 day ago)</option>
+                    </select>
+
+                    <h3>Customization Options</h3>
+                </div>
+
+                <div class="input-group">
+                    <label for="label">Label:</label>
+                    <span class="tooltip" title="The label for the left side of the badge">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="label" id="label" placeholder="custom badge">
+                </div>
+
+                <div class="input-group">
+                    <label for="labelColor">Label color:</label>
+                    <span class="tooltip" title="The background color for the label">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="labelColor" id="labelColor" placeholder="grey">
+                </div>
+
+                <div class="input-group">
+                    <label for="color">Color:</label>
+                    <span class="tooltip" title="The color for the right side of the badge">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="color" id="color" placeholder="blue">
+                </div>
+
+                <div class="input-group">
+                    <label for="logo">Logo (a <a
+                            href="https://github.com/simple-icons/simple-icons/blob/develop/slugs.md">named
+                            logo</a> or a base64-encoded SVG):</label>
+                    <span class="tooltip" title="The logo image for the left side of the badge">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="logo" id="logo" placeholder="github">
+                </div>
+
+                <div class="input-group">
+                    <label for="logoColor">Logo color:</label>
+                    <span class="tooltip" title="The color for the logo only when using a named logo from Simple Icons">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="logoColor" id="logoColor" placeholder="whitesmoke">
+                </div>
+
+                <div class="input-group">
+                    <label for="logoWidth">Logo width:</label>
+                    <span class="tooltip" title="The width for the logo">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="number" name="logoWidth" id="logoWidth" placeholder="16">
+                </div>
+
+                <div class="input-group">
+                    <label for="style">Style:</label>
+                    <span class="tooltip"
+                        title="The style for the badge (plastic, flat, flat-square, for-the-badge, or social)">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <select name="style" id="style">
+                        <option value="flat">flat</option>
+                        <option value="flat-square">flat-square</option>
+                        <option value="for-the-badge">for-the-badge</option>
+                        <option value="plastic">plastic</option>
+                        <option value="social">social</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="cacheSeconds">Cache seconds:</label>
+                    <span class="tooltip" title="The number of seconds to cache the response">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="number" name="cacheSeconds" id="cacheSeconds" placeholder="300">
+                </div>
+
+                <div class="input-group">
+                    <label for="prefix">Prefix:</label>
+                    <span class="tooltip" title="The prefix to use before the message">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="prefix" id="prefix" placeholder="prefix">
+                </div>
+
+                <div class="input-group">
+                    <label for="suffix">Suffix:</label>
+                    <span class="tooltip" title="The suffix to use after the message">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input type="text" name="suffix" id="suffix" placeholder="suffix">
+                </div>
+
+                <div class="input-group">
+                    <label for="href">Link:</label>
+                    <span class="tooltip" title="Where to link to when the badge is clicked">
+                        <svg height="1em" width="1em">
+                            <use href="#question" />
+                        </svg>
+                    </span>
+                    <input class="url-input" type="text" name="href" id="href" placeholder="https://example.com">
+                </div>
+            </form>
+        </div>
+
+        <div class="output">
+            <h2>Preview</h2>
+
+            <div id="preview">
+                <div class="loader dot-elastic" style="display: none;"></div>
+                <a>
+                    <img alt="Preview"
+                        src="https://img.shields.io/badge/preview-fill%20in%20a%20data%20url%20and%20query%20to%20see%20a%20preview-blue.svg?style=flat">
+                </a>
+                <div class="text-output image-source">
+                    <h3>Image Source</h3>
+                    <pre>https://img.shields.io/endpoint?url=https%3A%2F%2Fdynamic-badge-formatter-ynrxn78r2oye.runkit.sh%2F%2F&lt;DATA_TYPE&gt;%3Furl%3D&lt;URL&gt;%26query%3D&lt;QUERY&gt;%26formatter%3D&lt;FORMATTER&gt;%26style%3D&lt;STYLE&gt;</pre>
+                    <button class="copy-button btn" disabled>
+                        Copy To Clipboard
+                    </button>
+                </div>
+                <div class="text-output markdown">
+                    <h3>Markdown</h3>
+                    <pre>![badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fdynamic-badge-formatter-ynrxn78r2oye.runkit.sh%2F%2F&lt;DATA_TYPE&gt;%3Furl%3D&lt;URL&gt;%26query%3D&lt;QUERY&gt;%26formatter%3D&lt;FORMATTER&gt;%26style%3D&lt;STYLE&gt;)</pre>
+                    <button class="copy-button btn" disabled>
+                        Copy To Clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="center">
+            <a href="https://github.com/denvercoder1/dynamic-badge-formatter">View on GitHub</a>
+            <span>&nbsp;&middot;&nbsp;</span>
+            <span>&copy; 2022, <a href="https://github.com/denvercoder1">DenverCoder1</a></span>
+        </p>
+    </footer>
+</body>
+
+</html>

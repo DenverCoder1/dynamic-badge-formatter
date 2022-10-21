@@ -1,0 +1,364 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+:root {
+  --background: #090d13;
+  --card-background: #0d1117;
+  --text: #efefef;
+  --card-element-background: #2a2e34;
+  --stroke: #737373;
+  --blue-light: #1976d2;
+  --blue-transparent: #2196f320;
+  --blue-dark: #1565c0;
+  --button-outline: black;
+  --red: #ff6464;
+  --yellow: #a59809;
+  --yellow-light: #716800;
+  --link: #b7f9ff;
+  --link-visited: #f2a4ff;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Segoe UI, Ubuntu, sans-serif;
+}
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+footer {
+  margin-top: 3em;
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github {
+  gap: 0.5em;
+}
+
+.loader {
+  margin-left: 1.5em;
+}
+
+.input-group select,
+.input-group input {
+  padding: 0.4em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  background: var(--card-element-background);
+  color: var(--text);
+  border: 1px solid var(--stroke);
+}
+
+@media (max-width: 680px) {
+  .input-group select,
+  .input-group input {
+    display: block;
+    width: 100%;
+    margin: 0.75em 0;
+  }
+}
+
+.url-input {
+  width: 380px;
+  max-width: 100%;
+}
+
+div.text-output pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  background: var(--card-element-background);
+  padding: 1em;
+  border-radius: 0.5em;
+  max-width: 650px;
+}
+
+span.tooltip {
+  margin: 0 0.15em;
+  vertical-align: middle;
+}
+
+.container {
+  margin: auto;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.properties,
+.output {
+  margin: 10px;
+  background: var(--card-background);
+  padding: 25px;
+  padding-top: 0;
+  border: 1px solid var(--card-element-background);
+  border-radius: 6px;
+}
+
+.properties {
+  max-width: 628px;
+}
+
+.output {
+  max-width: 420px;
+}
+
+@media only screen and (max-width: 1115px) {
+  .properties,
+  .output {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+:not(.btn):focus {
+  outline: var(--blue-light) auto 2px;
+}
+
+.btn {
+  max-width: 100%;
+  background-color: var(--blue-light);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.2s ease-in-out;
+}
+
+.btn:focus {
+  outline: var(--button-outline) auto 2px;
+}
+
+.btn:hover {
+  background-color: var(--blue-dark);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background: var(--blue-transparent);
+  box-shadow: none;
+}
+
+.btn.copy-button {
+  width: 152px;
+}
+
+/* tooltips */
+
+/* bubble */
+.tooltip:before {
+  content: attr(title);
+  height: auto;
+  width: auto;
+  position: absolute;
+  background: #4a4a4afa;
+  border-radius: 4px;
+  color: white;
+  line-height: 30px;
+  font-size: 0.9em;
+  padding: 0 12px;
+  transform: translate(-55px, -35px);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* triangle */
+.tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #4a4a4afa transparent transparent transparent;
+  transform: translate(-10px, -5px);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tooltip:hover:before,
+.tooltip:hover:after {
+  opacity: 1;
+}
+
+/*
+   * three-dots - v0.2.3
+   * CSS loading animations made with single element
+   * https://nzbin.github.io/three-dots/
+   *
+   * Copyright (c) 2018 nzbin
+   * Released under MIT License
+   */
+.dot-elastic {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic 1s infinite linear;
+  animation: dot-elastic 1s infinite linear;
+}
+.dot-elastic::before,
+.dot-elastic::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-elastic::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic-before 1s infinite linear;
+  animation: dot-elastic-before 1s infinite linear;
+}
+.dot-elastic::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #b7f9ff;
+  color: #b7f9ff;
+  -webkit-animation: dot-elastic-after 1s infinite linear;
+  animation: dot-elastic-after 1s infinite linear;
+}
+
+@-webkit-keyframes dot-elastic-before {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dot-elastic-before {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes dot-elastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes dot-elastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes dot-elastic-after {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes dot-elastic-after {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
